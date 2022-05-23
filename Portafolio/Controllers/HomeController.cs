@@ -83,6 +83,24 @@ namespace Portafolio.Controllers
             return View(proyects);
         }
 
+        [HttpGet]
+        public IActionResult Contact()
+        {
+            return View();
+        }
+
+        [HttpPost] //Indica que esta accion se utiliza cuando se reciba un POST en /home/contact
+        public IActionResult Contact(ContactViewModel contactViewModel)
+        {
+            return RedirectToAction("Gracias");
+        }
+
+        public IActionResult Gracias()
+        {
+            return View();
+        }
+
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
