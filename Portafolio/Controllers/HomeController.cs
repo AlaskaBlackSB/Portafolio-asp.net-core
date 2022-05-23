@@ -15,7 +15,20 @@ namespace Portafolio.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            /*
+             ViewBag sirve para pasar informacion (modelo sin tipado)  del controlador a la vista
+              Ejemplo:
+                ViewBag.Nombre = "Agner Amador";
+                ViewBag.Descripcion = "Soy un desarrollador full stack especializado en .net y javascript";
+            */
+
+            //Se pasa a la vista un objeto
+            Person person = new Person() 
+            { 
+                Name = "Agner Amador", 
+                Description = "Soy un desarrollador full stack especializado en .net y javascript" 
+            };
+            return View(person);
         }
 
         public IActionResult Privacy()
